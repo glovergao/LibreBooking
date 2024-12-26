@@ -95,6 +95,7 @@
     {/foreach}
 {/if}
 
+{* 
 {if !$Deleted && !$Updated}
 <p>
     <strong>Attending?</strong> <a href="{$ScriptUrl}/{$AcceptUrl}">Yes</a> <a href="{$ScriptUrl}/{$DeclineUrl}">No</a>
@@ -107,3 +108,4 @@
 <a href="{$GoogleCalendarUrl}" target="_blank" rel="nofollow">Add to Google Calendar</a> |
 {/if}
 <a href="{$ScriptUrl}">Log in to {$AppTitle}</a>
+*}

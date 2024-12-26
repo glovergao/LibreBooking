@@ -50,6 +50,7 @@
 	一个或多个资源在预约使用之前需要被批准，此预约在批准之前处于待定状态。
 {/if}
 
+{* 
 <br/>
 待定? <a href="{$ScriptUrl}/{$AcceptUrl}">是</a> <a href="{$ScriptUrl}/{$DeclineUrl}">否</a>
 <br/>
@@ -58,3 +59,4 @@
 <a href="{$ScriptUrl}/{$ReservationUrl}">查看此预约</a> |
 <a href="{$ScriptUrl}/{$ICalUrl}">添加到日历</a> |
 <a href="{$ScriptUrl}">登录到 CVC Rental</a>
+*}
