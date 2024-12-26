@@ -174,6 +174,17 @@ abstract class ReservationEmailMessage extends EmailMessage
         $this->Set('ReferenceNumber', $currentInstance->ReferenceNumber());
 
         $participants = [];
+        // Add the reservation owner first
+        if ($this->reservationOwner) {
+            $owner = $this->userRepository->GetById($this->reservationOwner->Id());
+            if ($owner) {
+                $participants[] = $owner; // Add the reservation owner
+            } else {
+                // Handle case where the owner is not found (optional)
+                Log::Error('Reservation owner not found for ID: ' . $this->reservationOwner->Id());
+            }
+        }
+        
         foreach ($currentInstance->Participants() as $id) {
             $participants[] = $this->userRepository->GetById($id);
         }

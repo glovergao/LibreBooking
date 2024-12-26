@@ -51,8 +51,6 @@ class EmailService implements IEmailService
 
         $to = $this->ensureArray($emailMessage->To());
         $toAddresses = new StringBuilder();
-        /* add from into toAddresses */
-        $toAddresses->Append($from->Address());
         foreach ($to as $address) {
             $toAddresses->Append($address->Address());
             $this->phpMailer->addAddress($address->Address(), $address->Name());
