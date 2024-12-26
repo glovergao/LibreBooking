@@ -68,7 +68,7 @@ class EmailService implements IEmailService
 
         if ($emailMessage->HasStringAttachment()) {
             Log::Debug('Adding email attachment %s', $emailMessage->AttachmentFileName());
-            $this->phpMailer->addStringAttachment($emailMessage->AttachmentContents(), $emailMessage->AttachmentFileName());
+            $this->phpMailer->addStringAttachment($emailMessage->AttachmentContents(), $emailMessage->AttachmentFileName(), 'base64', 'text/calendar; method=REQUEST');
         }
 
         Log::Debug('Sending %s email to: %s from: %s', get_class($emailMessage), $toAddresses->ToString(), $this->phpMailer->From);
